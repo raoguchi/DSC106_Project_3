@@ -24,15 +24,22 @@ d3.json("imanaga.json").then(function(data) {
         .range(d3.schemeCategory10)
 
     // Create and append x-axis
-    svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+    // svg.append("g")
+    //     .attr("transform", "translate(0," + height + ")")
+    //     .call(d3.axisBottom(x));
 
     // Create and append y-axis
-    svg.append("g")
-        .call(d3.axisLeft(y));
+    // svg.append("g")
+    //     .call(d3.axisLeft(y));
 
     // Create and append circles for each data point
+
+    const infoDiv = d3.select("body").append("div")
+        .attr("class", "info")
+        .style("position", "absolute")
+        .style("left", "400px") // Adjust position as needed
+        .style("top", "200px");
+
     svg.selectAll("circle")
         .data(data)
         .enter()
@@ -40,5 +47,22 @@ d3.json("imanaga.json").then(function(data) {
         .attr("cx", d => x(d.plate_x))
         .attr("cy", d => y(d.plate_z))
         .attr("r", 5)
-        .attr('fill', d => colorScale(d.pitch_type));
+        .attr('fill', d => colorScale(d.pitch_type))
+        .on("mouseover", (event, d) => {
+            // Update infoDiv content on mouseover
+            infoDiv.html(`Pitch Speed: ${d.effective_speed}, Spin Rate: ${d.release_spin_rate}, Pitch Type: ${d.pitch_type}`);
+        })
+        .on("mouseout", () => {
+            // Clear infoDiv content on mouseout
+            infoDiv.html("");
+        });
+
+    svg.append('rect')
+        .attr('x', 105.729375)
+        .attr('y', 78.57142857142856)
+        .attr('width', 88.54124999999999)
+        .attr('height', 142.85714285714283)
+        .attr('stroke', 'black')
+        .attr('fill', 'none')
+        .attr('stroke-width', 3)
 });
