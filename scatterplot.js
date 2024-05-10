@@ -21,41 +21,56 @@ d3.json("imanaga.json").then(function(data) {
     
     const colorScale = d3.scaleOrdinal()
         .domain(data.map(d => d.pitch_type))
-        .range(d3.schemeCategory10)
-
-    // Create and append x-axis
-    // svg.append("g")
-    //     .attr("transform", "translate(0," + height + ")")
-    //     .call(d3.axisBottom(x));
-
-    // Create and append y-axis
-    // svg.append("g")
-    //     .call(d3.axisLeft(y));
-
-    // Create and append circles for each data point
+        .range(d3.schemeCategory10);
 
     const infoDiv = d3.select("body").append("div")
         .attr("class", "info")
         .style("position", "absolute")
-        .style("left", "400px") // Adjust position as needed
-        .style("top", "200px");
+        .style("left", "300px") // Adjust position as needed
+        .style("top", "600px");
 
-    svg.selectAll("circle")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("cx", d => x(d.plate_x))
-        .attr("cy", d => y(d.plate_z))
-        .attr("r", 5)
-        .attr('fill', d => colorScale(d.pitch_type))
-        .on("mouseover", (event, d) => {
-            // Update infoDiv content on mouseover
-            infoDiv.html(`Pitch Speed: ${d.effective_speed}, Spin Rate: ${d.release_spin_rate}, Pitch Type: ${d.pitch_type}`);
-        })
-        .on("mouseout", () => {
-            // Clear infoDiv content on mouseout
-            infoDiv.html("");
-        });
+    
+    function updatePlot(selectedDate) {
+        let filteredData = data;
+        if (selectedDate !== "all") {
+            filteredData = data.filter(d => d.game_date === selectedDate)
+        }
+
+        svg.selectAll('circle').remove();
+
+        svg.selectAll("circle")
+            .data(filteredData)
+            .enter()
+            .append("circle")
+            .attr("cx", d => x(d.plate_x))
+            .attr("cy", d => y(d.plate_z))
+            .attr("r", 5)
+            .attr('fill', d => colorScale(d.pitch_type))
+            .on("mouseover", (event, d) => {
+                // Update infoDiv content on mouseover
+                infoDiv.html(`Pitch Speed: ${d.effective_speed}, Spin Rate: ${d.release_spin_rate}, Pitch Type: ${d.pitch_type}`);
+            })
+            .on("mouseout", () => {
+                // Clear infoDiv content on mouseout
+                infoDiv.html("");
+            });
+    }
+
+    const uniqueDates = new Set(data.map(d => d.game_date));
+    let dateSelect = d3.select("#date-select");
+
+    uniqueDates.forEach(date => {
+        dateSelect.append('option')
+            .attr('value', date)
+            .text(date);
+    })
+
+    d3.select("#date-select").on('change', function() {
+        let selectedDate = d3.select(this).property('value');
+        updatePlot(selectedDate);
+    });
+
+    updatePlot('all')
 
     svg.append('rect')
         .attr('x', 105.729375)

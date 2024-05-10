@@ -3,10 +3,22 @@
 <head>
     <title>Project 3 Chart</title>
     <script src = 'https://d3js.org/d3.v7.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <h1>Cubs Pitcher Shota Imanaga's 2024 Pitch Map</h1>
     <div id="chart-container"></div>
     <svg width="400" height="400"></svg>
     <script src="scatterplot.js"></script>
+    <div class="info"></div>
+    <h2>Shota Imanaga Bump Days:</h2>
+        <div>
+            <label for ='date-select'>Select Date:</label>
+            <select id = "date-select">
+                <option value ='all'>All</option>
+            </select>
+        </div>
+    <h3>Pitch Info: (Hover to Display)</h3>    
+        
 </body>
 </html>

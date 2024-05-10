@@ -1,0 +1,43 @@
+label {
+    font-family: mlb-primary, "Helvetica Neue", Helvetica, Arial, san-serif;
+    font-size: 16px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+select{
+    font-family: mlb-primary, "Helvetica Neue", Helvetica, Arial, san-serif;
+    font-size: 16px;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+text {
+    font-family: mlb-primary, "Helvetica Neue", Helvetica, Arial, san-serif;
+    font-size: 16px;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+h1 {
+    font-family: mlb-primary, "Helvetica Neue", Helvetica, Arial, san-serif;
+    font-size: 32px;
+    margin-right: 10px;
+    font-weight: 1000;
+}
+
+h2 {
+    font-family: mlb-primary, "Helvetica Neue", Helvetica, Arial, san-serif;
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: 750;
+}
+
+.info {
+    position: absolute;
+    font-family: mlb-primary, "Helvetica Neue", Helvetica, Arial, san-serif;
+    font-size: 16px;;
+    margin-right: 10px;
+    font-weight: 500;
+    pointer-events: none;
+}
