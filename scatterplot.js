@@ -27,7 +27,7 @@ d3.json("imanaga.json").then(function(data) {
         .attr("class", "info")
         .style("position", "absolute")
         .style("left", "300px") // Adjust position as needed
-        .style("top", "600px");
+        .style("top", "593px");
 
     
     function updatePlot(selectedDate) {
