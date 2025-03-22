@@ -79,3 +79,65 @@ td {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fefefe;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.navbar {
+    background-color: #004080;
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ffcc00;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.svg-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}

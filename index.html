@@ -1,34 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <title>Project 3 Chart</title>
-    <script src = 'https://d3js.org/d3.v7.min.js'></script>
+    <meta charset="UTF-8">
+    <title>Pitch Data Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        nav {
+            margin-bottom: 20px;
+            background-color: #004080;
+            padding: 10px 20px;
+        }
+
+        nav a {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+            background-color: #004080;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: #005bbb;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .svg-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
 </head>
+
 <body>
+    <nav>
+        <a href="index.html">📊 Visualization</a>
+        <a href="readme.html">📘 README</a>
+    </nav>
 
-    <h1>Cubs Pitcher Shota Imanaga's 2024-2025 Pitch Map</h1>
-
-    <!-- Tabs -->
-    <div class="tab-buttons">
-        <button onclick="showTab('viz')">📊 Visualization</button>
-        <button onclick="showTab('readme')">📘 README</button>
+    <div class="card">
+        <h1>Cubs Pitcher Shota Imanaga's 2024-2025 Pitch Map</h1>
+        <div class="svg-container">
+            <svg></svg>
+        </div>
+        <div class="info"></div>
     </div>
 
-    <!-- Tab: Visualization -->
-    <div id="viz" class="tab-content active">
-        <div id="chart-container"></div>
-        <svg width="400" height="400"></svg>
-        <div class="info"></div>
-
+    <div class="card">
         <h2>Shota Imanaga Bump Days:</h2>
         <label for='date-select'>Select Date:</label>
         <select id="date-select">
             <option value='all'>All</option>
         </select>
+    </div>
 
+    <div class="card">
         <h3>Pitch Info: (Hover to Display):</h3>
         <table>
             <thead>
@@ -68,7 +139,9 @@
                 </tr>
             </tbody>
         </table>
+    </div>
 
+    <div class="card">
         <p>All data provided by BaseballSavant.com</p>
         <a href="https://baseballsavant.mlb.com/savant-player/shota-imanaga-684007?stats=statcast-r-pitching-mlb"
             target="_blank">
@@ -76,30 +149,7 @@
         </a>
     </div>
 
-    <!-- Tab: README -->
-    <div id="readme" class="tab-content">
-        <h2>📘 Project Documentation</h2>
-        <div id="readme-content">Loading README...</div>
-    </div>
-
-    <!-- Scripts -->
     <script src="scatterplot.js"></script>
-    <script>
-        function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
-        }
-
-        // Convert and load README.md
-        fetch('README.md')
-            .then(response => response.text())
-            .then(markdown => {
-                const converter = new showdown.Converter();
-                const html = converter.makeHtml(markdown);
-                document.getElementById('readme-content').innerHTML = html;
-            });
-    </script>
 </body>
+
 </html>
