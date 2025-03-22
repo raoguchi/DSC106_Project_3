@@ -1,6 +1,6 @@
 # 📊 DSC106 Project 3 Summary: Visualizing MLB Pitching Data
 
-By: Alex Oguchi
+### By: Alex Oguchi
 
 🎯 Objective
 The goal of this project was to create an interactive data visualization of MLB pitcher Shota Imanaga's pitch data using D3.js, focusing on pitch type, location, and attributes across different game dates.
