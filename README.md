@@ -21,17 +21,6 @@ The goal of this project was to create an interactive data visualization of MLB 
 
 <h2>🧾 Sample Pitch DataFrame (Full Scouting Data)</h2>
 <div style="overflow-x:auto;">
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -72,17 +61,6 @@ The goal of this project was to create an interactive data visualization of MLB 
 
 <h2>🎯 Pitch Plot Data (Used in D3.js Visualization)</h2>
 <div style="overflow-x:auto;">
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
