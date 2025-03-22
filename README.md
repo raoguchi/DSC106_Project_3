@@ -94,7 +94,7 @@ The goal of this project was to create an interactive data visualization of MLB 
 ***
 
 
-📌 Features Implemented
+## 📌 Features Implemented
 1. Interactive Pitch Scatterplot
 * Built with D3.js and rendered within a 400x400 SVG canvas.
 
@@ -124,7 +124,7 @@ Tooltip on hover shows:
 
 * Clean and minimal interface for improved readability and interaction.
 
-🛠 Technologies
+## 🛠 Technologies
 * D3.js (v7)
 
 * HTML/CSS
@@ -137,5 +137,5 @@ Tooltip on hover shows:
 
 * Jupyter Notebook (Python) for initial exploration.
 
-🔗 Resources
+## 🔗 Resources
 * Pitch data sourced from BaseballSavant.com
