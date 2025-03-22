@@ -91,6 +91,8 @@ The goal of this project was to create an interactive data visualization of MLB 
 <p>2817 rows × 7 columns</p>
 </div>
 
+---
+
 
 📌 Features Implemented
 1. Interactive Pitch Scatterplot
