@@ -16,6 +16,11 @@ The goal of this project was to create an interactive data visualization of MLB 
 
 * README.md: Project description and context.
 
+
+## 📋 Data Preview
+
+<iframe src="assets/imanaga_dataframes.html" width="100%" height="600" style="border:none;"></iframe>
+
 📌 Features Implemented
 1. Interactive Pitch Scatterplot
 * Built with D3.js and rendered within a 400x400 SVG canvas.
@@ -36,7 +41,7 @@ Tooltip on hover shows:
 3. Date Filtering Dropdown
 * Dynamically populated dropdown for selecting a game date.
 
-Filtering the scatterplot to only show pitches from a specific date or "All" by default.
+* Filtering the scatterplot to only show pitches from a specific date or "All" by default.
 
 4. Pitch Type Key Table
 * HTML table showing abbreviations and full names of all pitch types used.
